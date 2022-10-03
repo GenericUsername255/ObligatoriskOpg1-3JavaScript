@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- https://www.bootstrapcdn.com/ -->
+
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <title>String Dublicator</title>
+</head>
+
+<body class="bg-light">
+    <h1>Free String Dublicator</h1>
+    <h3>Now 50% off!</h3>
+    <div id="app">
+        <div>
+            <label>Input: </label>
+            <input v-model="string" placeholder="Type here">
+        </div>
+        <div>
+            <label>Multiply by: </label>
+            <input v-model="multiplierN" placeholder="0">
+            <p v-if="multiplierN < 0">Number must be positive!</p>  
+        </div>
+        <div>
+            <button id="multiplyBtn" v-on:click="multiplyString" type="button"
+                class="btn btn-outline-danger">Multiply!</button>
+        </div>
+        <div style="word-break: break-all;" class="container-fluid p-3 my-3 border"> <h6>{{ multiString }}</h6></div>
+    </div>
+    <!-- Import App -->
+    <script src="./js/main.js"></script>
+
+    <!-- Mount App -->
+    <script>
+        const mountedApp = app.mount('#app')
+    </script>
+
+</body>
+
+</html>
